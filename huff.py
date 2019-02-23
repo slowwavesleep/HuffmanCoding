@@ -4,23 +4,14 @@ from operator import attrgetter
 
 class MyNode:
 
-    def __init__(self, weight=0, left=None, right=None, letter=None, data='root'):
+    def __init__(self, weight=0, left=None, right=None, data='root'):
         self.weight = weight
         self.left = left
         self.right = right
-        self.letter = letter
         self.data = data
 
     def __repr__(self):
         return f'Tree Node Weight: {self.weight}, Data: {self.data}'
-
-    def child_nodes(self):
-        if self.left is not None and self.right is None:
-            return [self.left]
-        elif self.left is None:
-            return None
-        else:
-            return [self.left, self.right]
 
 
 def get_weight(nodes):
